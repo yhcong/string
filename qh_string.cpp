@@ -98,85 +98,55 @@ namespace qh
 		strcat(str->data_, s);
 		return *str;
 	}
-	 /*
-	 string::Trim(string &str, const string &drop)
-	{
-		 str.erase(str.find_last_not_of(drop) + 1);
-		 return str.erase(0, str.find_first_not_of(drop));
-	}*/
+	 
 
-    string::~string()
-    { 
-		if(data_!=NULL){
-			delete []data_;
-			data_=NULL;
-		}
-
-    }
-
-    size_t string::size() const
-    {
-        return len_;
-    }
-
-    const char* string::data() const
-    {
-		//cout << data_ << endl;
-		return data_;
-
-        //return NULL;
-    }
-
-    const char* string::c_str() const
-    {
-		return data_;
-        //return NULL;
-    }
-
-	bool string::empty()
-	{
-		if(data_==NULL)
-			return 1;
-		else
-			return 0;
-
-	}
-
-    char string::operator[]( size_t index )
-    {
-		if (index<0 || index>=len_)
-		 {
-			 printf("out of range!\n");
-		 }
-		 return this->data_[index];
-        //return NULL;
-    }
-	/*
-	void string::strcat(const char *s1,const char *s2)
-	{
-		size_t l1,l2;
-		string *str = new string;
-		l1=strlen(s1);
-		l2=strlen(s2);
-		if (l1+l2>0)
+	    string::~string()
+	    { 
+			if(data_!=NULL){
+				delete []data_;
+				data_=NULL;
+			}
+	
+	    }
+	
+	    size_t string::size() const
+	    {
+	        return len_;
+	    }
+	
+	    const char* string::data() const
+	    {
+			//cout << data_ << endl;
+			return data_;
+	
+	        //return NULL;
+	    }
+	
+	    const char* string::c_str() const
+	    {
+			return data_;
+	        //return NULL;
+	    }
+	
+		bool string::empty()
 		{
-		   if (l1>0)
-		   {
-			  char* t;
-			  t=new char[l1+1];
-			  strcpy(t,s1);
-			  delete []s1;
-			  s1=new char[l1+l2+1];
-			  strcpy(s1,t);
-			  if (l2>0) 
-				  strcat(s1.data_,s2);
-		   }
-		   else     //l1=0,l2>0
-			  strcpy(s1.ss,s2);
-		   s1.length=l1+l2;
+			if(data_==NULL)
+				return 1;
+			else
+				return 0;
+	
 		}
-		//when l1+l2=0,s1 is still NULL
-	}*/
+	
+	    char string::operator[]( size_t index )
+	    {
+			if (index<0 || index>=len_)
+			 {
+				 printf("out of range!\n");
+			 }
+			 return this->data_[index];
+	        //return NULL;
+	    }
+	
 
 	
 	bool string::erase( const unsigned& begin,const unsigned& end ) 
@@ -374,15 +344,7 @@ namespace qh
 		 len_ = len_-len+str.len_;
 		 SafeRelease_Array( t2 );
 
-		//strncpy_s(t->data_+pos-1,len, str.data_,str.len_);
-		/*
-		char *t1 = new char [len_-pos-len+1];
-		strncpy_s(t1,len_-pos-len+1,data_+pos+len,len_-pos-len+1);
-		//strncat_s(data_,len_+2,t,len_ - pos );
-		strcat(t->data_,str.data_);
-		strcat(t->data_,t1);*/
-		
-		//return *t;
+	
 		
 
 	}
